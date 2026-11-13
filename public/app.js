@@ -170,13 +170,13 @@ async function renderGoogleButton() {
             callback: handleGoogleCredential,
         });
         window.google.accounts.id.renderButton(elements.buttonHost, {
-            type: "icon",
+            type: "standard",
             logo_alignment: "center",   
             theme: "outline",
             size: "signin",
             text: "continue_with",
             shape: "rectangular",
-            width: 300,
+            width: 500,
             locale: "pt-BR",
         });
         clearNotice();
