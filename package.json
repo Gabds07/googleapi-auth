@@ -1,0 +1,19 @@
+{
+  "name": "login-google-seguro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demonstração educativa de login Google com validação server-side e sessão própria.",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --env-file-if-exists=.env server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "google-auth-library": "^9.15.1"
+  }
+}

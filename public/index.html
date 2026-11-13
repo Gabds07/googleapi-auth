@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2f3f7" />
+    <meta name="description" content="Acesse sua conta usando o Google." />
+    <title>Entrar — Acesso seguro</title>
+    <link rel="icon" type="image/svg+xml" href="/brand-mark.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <input
+      class="theme-input"
+      id="theme-toggle"
+      type="checkbox"
+      aria-label="Alternar entre tema claro e escuro"
+    />
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Acesso seguro — início">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span class="brand-name">Acesso<span> seguro</span></span>
+      </a>
+
+      <label class="theme-toggle" for="theme-toggle" title="Alternar tema claro/escuro">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 15.2A8.4 8.4 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" />
+        </svg>
+        <span class="sr-only">Alternar tema claro ou escuro</span>
+      </label>
+    </header>
+
+    <main class="page-main">
+      <div class="auth-layout">
+        <section class="visual-panel" aria-label="Bem-vindo">
+          <div class="visual-copy">
+            <h1>Seu espaço.<br /><span></span></h1>
+          </div>
+
+          <div class="visual-art" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="orbit orbit-three"></span>
+            <span class="art-core"></span>
+            <span class="art-spark spark-one"></span>
+            <span class="art-spark spark-two"></span>
+          </div>
+        </section>
+
+        <section class="form-panel" aria-labelledby="login-title">
+          <div class="form-content">
+            <div id="login-view">
+              <h2 id="login-title">Entrar na sua conta</h2>
+              <p class="form-description">Continue com sua conta Google.</p>
+
+              <div id="google-button" class="google-button-slot" aria-label="Entrar com Google">
+                <span class="loading-copy">Carregando…</span>
+              </div>
+
+              <div id="notice" class="notice" role="status" aria-live="polite">
+                <span class="notice-mark" aria-hidden="true"></span>
+                <span id="notice-text">Preparando o login…</span>
+              </div>
+            </div>
+
+            <div id="account-view" class="account-view" hidden>
+              <p class="session-status"><span class="status-dot" aria-hidden="true"></span> Conectado</p>
+              <div class="profile-row">
+                <img id="profile-picture" class="profile-picture" alt="" hidden />
+                <div id="profile-initial" class="profile-initial" aria-hidden="true">G</div>
+                <div class="profile-details">
+                  <h2 id="profile-name">Conta Google</h2>
+                  <p id="profile-email"></p>
+                </div>
+              </div>
+              <button id="logout-button" class="logout-button" type="button">
+                Sair da conta <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
