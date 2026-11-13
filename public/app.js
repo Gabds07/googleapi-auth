@@ -171,11 +171,12 @@ async function renderGoogleButton() {
         });
         window.google.accounts.id.renderButton(elements.buttonHost, {
             type: "icon",
+            logo_alignment: "center",   
             theme: "outline",
             size: "signin",
             text: "continue_with",
-            shape: "circle",
-            width: 200,
+            shape: "rectangular",
+            width: 300,
             locale: "pt-BR",
         });
         clearNotice();
