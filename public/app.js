@@ -158,6 +158,8 @@ function displayConfigurationHelp(message) {
 
 async function renderGoogleButton() {
     try {
+        const themeToggle = document.querySelector("#theme-toggle");
+
         const { nonce } = await apiRequest("/api/auth/nonce");
         await loadGoogleIdentityServices();
         elements.buttonHost.replaceChildren();
@@ -169,9 +171,10 @@ async function renderGoogleButton() {
             cancel_on_tap_outside: true,
             callback: handleGoogleCredential,
         });
+
         window.google.accounts.id.renderButton(elements.buttonHost, {
             type: "standard",
-            logo_alignment: "center",   
+            logo_alignment: "center",
             theme: "outline",
             size: "signin",
             text: "continue_with",
@@ -179,6 +182,32 @@ async function renderGoogleButton() {
             width: 500,
             locale: "pt-BR",
         });
+        themeToggle.addEventListener("change", (event) => {
+            if (event.target.checked) {
+                window.google.accounts.id.renderButton(elements.buttonHost, {
+                    type: "standard",
+                    logo_alignment: "center",
+                    theme: "filled_black",
+                    size: "signin",
+                    text: "continue_with",
+                    shape: "rectangular",
+                    width: 500,
+                    locale: "pt-BR",
+                });
+            } else {
+                window.google.accounts.id.renderButton(elements.buttonHost, {
+                    type: "standard",
+                    logo_alignment: "center",
+                    theme: "outline",
+                    size: "signin",
+                    text: "continue_with",
+                    shape: "rectangular",
+                    width: 500,
+                    locale: "pt-BR",
+                });
+            }
+        });
+
         clearNotice();
     } catch (error) {
         elements.buttonHost.replaceChildren();
