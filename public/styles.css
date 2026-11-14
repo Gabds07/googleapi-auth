@@ -1618,3 +1618,69 @@ p {
         font-size: 7px;
     }
 }
+
+/* Boas-vindas em modal independente do canvas para facilitar o toque no celular. */
+.welcome-modal {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 20px;
+    background: rgb(3 6 16 / 88%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    touch-action: pan-y;
+}
+.welcome-modal[hidden] {
+    display: none;
+}
+.welcome-modal .intro-card {
+    width: min(100%, 480px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    padding: clamp(22px, 4vw, 34px);
+    box-shadow: 10px 10px 0 #090d1b;
+}
+.welcome-modal #start-game {
+    min-height: 58px;
+    margin-top: 5px;
+    font-size: 13px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 760px) {
+    .welcome-modal {
+        padding: 16px;
+    }
+    .welcome-modal .intro-card {
+        width: min(100%, 480px);
+        max-height: calc(100dvh - 32px);
+        padding: 22px 20px;
+    }
+    .welcome-modal #start-game {
+        min-height: 64px;
+        font-size: 14px;
+    }
+    .welcome-modal .controls-row {
+        margin: 16px auto 18px;
+    }
+}
+@media (max-width: 420px) {
+    .welcome-modal {
+        padding: 12px;
+    }
+    .welcome-modal .intro-card {
+        max-height: calc(100dvh - 24px);
+        padding: 18px 16px;
+    }
+    .welcome-modal #start-game {
+        min-height: 62px;
+    }
+    .welcome-modal .overlay-icon {
+        margin-bottom: 9px;
+    }
+    .welcome-modal .overlay-card h2 {
+        font-size: 21px;
+    }
+}
