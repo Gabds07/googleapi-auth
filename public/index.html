@@ -3,89 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f2f3f7" />
-    <meta name="description" content="Acesse sua conta usando o Google." />
-    <title>Entrar — Acesso seguro</title>
+    <meta name="theme-color" content="#080b18" />
+    <meta name="description" content="Entre com o Google e pilote sua nave em uma aventura arcade pixel art." />
+    <title>STAR//GUARD — Acesso à missão</title>
     <link rel="icon" type="image/svg+xml" href="/brand-mark.svg" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/app.js" defer></script>
   </head>
   <body>
-    <input
-      class="theme-input"
-      id="theme-toggle"
-      type="checkbox"
-      aria-label="Alternar entre tema claro e escuro"
-    />
-
+    <div class="starfield" aria-hidden="true"></div>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Acesso seguro — início">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span class="brand-name">Acesso<span> seguro</span></span>
-      </a>
-
-      <label class="theme-toggle" for="theme-toggle" title="Alternar tema claro/escuro">
-        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
-        </svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.5 15.2A8.4 8.4 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" />
-        </svg>
-        <span class="sr-only">Alternar tema claro ou escuro</span>
-      </label>
-    </header>
-
-    <main class="page-main">
-      <div class="auth-layout">
-        <section class="visual-panel" aria-label="Bem-vindo">
-          <div class="visual-copy">
-            <h1>Seu espaço.<br /><span></span></h1>
-          </div>
-
-          <div class="visual-art" aria-hidden="true">
-            <span class="orbit orbit-one"></span>
-            <span class="orbit orbit-two"></span>
-            <span class="orbit orbit-three"></span>
-            <span class="art-core"></span>
-            <span class="art-spark spark-one"></span>
-            <span class="art-spark spark-two"></span>
-          </div>
-        </section>
-
-        <section class="form-panel" aria-labelledby="login-title">
-          <div class="form-content">
-            <div id="login-view">
-              <h2 id="login-title">Entrar na sua conta</h2>
-              <p class="form-description">Continue com sua conta Google.</p>
-
-              <div id="google-button" class="google-button-slot" aria-label="Entrar com Google">
-                <span class="loading-copy">Carregando…</span>
-              </div>
-
-              <div id="notice" class="notice" role="status" aria-live="polite">
-                <span class="notice-mark" aria-hidden="true"></span>
-                <span id="notice-text">Preparando o login…</span>
-              </div>
-            </div>
-
-            <div id="account-view" class="account-view" hidden>
-              <p class="session-status"><span class="status-dot" aria-hidden="true"></span> Conectado</p>
-              <div class="profile-row">
-                <img id="profile-picture" class="profile-picture" alt="" hidden />
-                <div id="profile-initial" class="profile-initial" aria-hidden="true">G</div>
-                <div class="profile-details">
-                  <h2 id="profile-name">Conta Google</h2>
-                  <p id="profile-email"></p>
-                </div>
-              </div>
-              <button id="logout-button" class="logout-button" type="button">
-                Sair da conta <span aria-hidden="true">↗</span>
-              </button>
-            </div>
-          </div>
-        </section>
+      <a class="brand" href="/" aria-label="Star Guard — início"><span class="brand-mark" aria-hidden="true"><i></i></span><span class="brand-name">STAR<span>//</span>GUARD</span></a>
+      <div class="header-right">
+        <div id="player-chip" class="player-chip" hidden><span class="connected-led" aria-hidden="true"></span><img id="profile-picture" class="profile-picture" alt="" hidden /><span id="profile-initial" class="profile-initial" aria-hidden="true">P</span><span class="player-copy"><small>GOOGLE · CONECTADO</small><strong id="profile-name">Conta Google</strong></span><button id="logout-button" class="logout-button" type="button" title="Sair da conta" aria-label="Sair da conta">⏻</button></div>
+        <span class="top-status"><i></i> SISTEMA ONLINE</span>
       </div>
+    </header>
+    <main class="page-main">
+      <section id="login-view" class="login-shell" aria-labelledby="login-title">
+        <div class="login-hero"><div class="hero-grid" aria-hidden="true"></div><div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> ARQUIVO DE MISSÃO · 2089</p><h1>O espaço<br />precisa de <em>você.</em></h1><p class="hero-description">Cinco setores hostis. Uma última esperança.<br />Prepare sua nave, piloto.</p><div class="hero-meta"><span class="pixel-star">✦</span> ARCADE DE SOBREVIVÊNCIA <b>•</b> 5 FASES</div></div><div class="hero-art" aria-hidden="true"><div class="planet-ring ring-a"></div><div class="planet-ring ring-b"></div><div class="pixel-planet"><span></span></div><div class="hero-ship"><i></i><b></b></div><span class="pixel-spark spark-a">✦</span><span class="pixel-spark spark-b">·</span><span class="pixel-spark spark-c">✧</span><span class="pixel-alien alien-a"></span><span class="pixel-alien alien-b"></span><span class="laser-trail"></span></div><div class="hero-bottom"><span>◆ SECTOR 01 // ORBITA EXTERNA</span><span>✦ ✦ ✦</span></div></div>
+        <div class="login-panel"><div class="login-panel-inner"><div class="login-symbol" aria-hidden="true"><span>✦</span></div><p class="eyebrow login-eyebrow">IDENTIFICAÇÃO DE PILOTO</p><h2 id="login-title">A missão<br /><em>começa aqui.</em></h2><p class="login-description">Conecte sua conta Google para salvar seu perfil e entrar na cabine.</p><div id="google-button" class="google-button-slot" aria-label="Entrar com Google"><span class="loading-copy">Carregando…</span></div><div id="notice" class="notice" role="status" aria-live="polite"><span class="notice-mark" aria-hidden="true"></span><span id="notice-text">Preparando sistemas…</span></div><div class="login-divider"><span>ACESSO SEGURO</span></div><p class="privacy-note"><span aria-hidden="true">⌑</span> Sua autenticação é protegida pelo Google.</p></div><div class="login-panel-footer"><span>STAR//GUARD</span><span>BUILD 01.89.04</span></div></div>
+      </section>
+      <section id="game-view" class="game-shell" hidden aria-label="Jogo Star Guard">
+        <div class="game-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> PILOTO AUTENTICADO · MISSÃO ATIVA</p><h1>Defenda a <em>fronteira.</em></h1></div><div class="game-heading-right"><span class="mission-tag"><i></i> OPERAÇÃO: ÚLTIMA LUZ</span><button id="signout-game" class="text-button" type="button">SAIR DA CONTA</button></div></div>
+        <div class="game-layout"><section class="arcade-frame" aria-label="Cabine de jogo"><div class="arcade-topbar"><span><i class="live-dot"></i> LIVE FEED</span><span class="arcade-title">STAR<span>//</span>GUARD <b>·</b> GALACTIC DEFENSE</span><span id="game-state-label">AGUARDANDO PILOTO</span></div><div class="game-stage-wrap"><canvas id="game-canvas" width="960" height="600" aria-label="Campo de batalha espacial pixel art"></canvas>
+          <div id="intro-screen" class="game-overlay"><div class="overlay-card intro-card"><div class="overlay-icon">✦</div><p class="eyebrow">TRANSMISSÃO PRIORITÁRIA</p><h2>Bem-vindo à<br /><em>fronteira, <span id="welcome-name">piloto</span>.</em></h2><p class="overlay-copy">A estação aguarda suas ordens. Aprenda os controles e prepare-se para cinco fases de combate.</p><div class="controls-row"><div class="key-cluster"><span class="key key-up">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span></div><span class="control-label">MOVER<br /><small>NAVE</small></span><span class="control-divider"></span><span class="key key-fire">J</span><span class="control-label">DISPARAR<br /><small>LASER</small></span></div><button id="start-game" class="primary-button" type="button"><span>OK, COMEÇAR</span><b>→</b></button><p class="overlay-footnote">3 VIDAS <b>·</b> 5 FASES <b>·</b> UM ÚLTIMO BOSS</p></div></div>
+          <div id="pause-screen" class="game-overlay" hidden><div class="overlay-card compact-card"><p class="eyebrow">SISTEMA EM ESPERA</p><h2>Jogo <em>pausado.</em></h2><p class="overlay-copy">Pressione P ou retome para voltar à batalha.</p><button id="resume-game" class="primary-button" type="button"><span>RETOMAR MISSÃO</span><b>→</b></button></div></div>
+          <div id="end-screen" class="game-overlay" hidden><div class="overlay-card compact-card"><p id="end-eyebrow" class="eyebrow">TRANSMISSÃO ENCERRADA</p><h2 id="end-title">Missão <em>concluída.</em></h2><p id="end-copy" class="overlay-copy">A fronteira está segura.</p><div class="end-stats"><span>PONTUAÇÃO<strong id="final-score">000000</strong></span><span>TEMPO<strong id="final-time">00:00</strong></span></div><button id="replay-game" class="primary-button" type="button"><span>JOGAR NOVAMENTE</span><b>↻</b></button></div></div></div>
+          <div class="arcade-bottombar"><span><b class="legend-ship"></b> SUA NAVE</span><span><b class="legend-alien"></b> ALIEN +100</span><span><b class="legend-threat"></b> AMEAÇA</span><span class="sound-status">◆ DEFCON <strong id="defcon">05</strong></span></div></section>
+          <aside class="hud-panel" aria-label="Indicadores da missão"><div class="hud-card phase-card"><div class="hud-card-head"><span>PROGRESSO DA MISSÃO</span><span class="hud-icon">◈</span></div><p class="phase-number">FASE <strong id="phase-number">01</strong><span>/ 05</span></p><div class="phase-track"><i id="phase-progress"></i></div><p id="phase-name" class="phase-name">SINAL DESCONHECIDO</p><div class="phase-list"><span class="phase-dot current"></span><span class="phase-dot"></span><span class="phase-dot"></span><span class="phase-dot"></span><span class="phase-dot boss-dot">◆</span></div></div><div class="hud-card score-card"><div class="hud-card-head"><span>PONTUAÇÃO</span><span class="hud-icon">✦</span></div><strong id="score-value" class="score-value">000000</strong><p>ALIENS ELIMINADOS <span id="alien-count">00</span></p></div><div class="hud-card timer-card"><div class="hud-card-head"><span>TEMPO DE MISSÃO</span><span class="hud-icon">◷</span></div><strong id="timer-value" class="timer-value">00:00</strong><p id="timer-caption">CRONÔMETRO EM ESPERA</p></div><div class="hud-card vitals-card"><div class="hud-card-head"><span>INTEGRIDADE DA NAVE</span><span class="hud-icon">♥</span></div><div id="lives-display" class="lives-display"><i>♥</i><i>♥</i><i>♥</i></div><p>ESCUDOS RESTANTES</p></div><div class="powerup-note"><span>✦</span><p><strong>UPGRADE DE ARMAS</strong><br />O reforço duplo aparece ao concluir a fase 4.</p></div><button id="pause-button" class="pause-button" type="button" disabled>Ⅱ <span>PAUSAR MISSÃO</span><kbd>P</kbd></button></aside></div>
+        <div class="mobile-controls" aria-label="Controles touch"><div class="touch-dpad"><button data-move="up" aria-label="Mover para cima">▲</button><div><button data-move="left" aria-label="Mover para a esquerda">◀</button><button data-move="down" aria-label="Mover para baixo">▼</button><button data-move="right" aria-label="Mover para a direita">▶</button></div></div><button id="touch-fire" class="touch-fire" aria-label="Disparar">FIRE</button></div><p class="game-hint"><span>W A S D</span> MOVER <b>·</b> <span>J</span> DISPARAR <b>·</b> <span>P</span> PAUSAR <b>·</b> NO CELULAR, USE OS BOTÕES NA TELA</p>
+      </section>
     </main>
+    <footer class="site-footer"><span>STAR//GUARD <b>·</b> PILOTE COM CORAGEM</span><span>FEITO PARA EXPLORADORES DO ESPAÇO <i>✦</i></span></footer>
   </body>
 </html>
