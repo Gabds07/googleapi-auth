@@ -1498,3 +1498,123 @@ p {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Mobile play layout: mission data first, viewport second, touch controls third. */
+@media (max-width: 760px) {
+    .game-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hud-panel {
+        order: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+    .arcade-frame {
+        order: 1;
+    }
+    .phase-card {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas: "head head" "number number" "progress progress" "name dots";
+        column-gap: 12px;
+        padding: 10px 12px;
+    }
+    .phase-card > .hud-card-head {
+        grid-area: head;
+    }
+    .phase-card > .phase-number {
+        grid-area: number;
+        margin: 7px 0 5px;
+    }
+    .phase-card > .phase-track {
+        grid-area: progress;
+    }
+    .phase-card > .phase-name {
+        grid-area: name;
+        margin: 7px 0 0;
+    }
+    .phase-card > .phase-list {
+        grid-area: dots;
+        align-self: end;
+        justify-self: end;
+        margin-top: 7px;
+    }
+    .score-card,
+    .timer-card,
+    .vitals-card {
+        min-width: 0;
+        padding: 10px 11px;
+    }
+    .score-card .score-value,
+    .timer-card .timer-value {
+        margin: 9px 0 4px;
+        font-size: 20px;
+    }
+    .powerup-note,
+    .pause-button {
+        grid-column: span 2;
+    }
+    .mobile-controls {
+        margin-top: 9px;
+        padding-top: 5px;
+    }
+    .game-hint {
+        margin-top: 8px;
+    }
+}
+@media (max-width: 420px) {
+    .game-layout {
+        gap: 8px;
+    }
+    .hud-panel {
+        gap: 6px;
+    }
+    .phase-card {
+        padding: 9px 10px;
+    }
+    .phase-number {
+        margin: 5px 0 4px;
+        font-size: 9px;
+    }
+    .phase-number strong {
+        font-size: 21px;
+    }
+    .score-card,
+    .timer-card,
+    .vitals-card {
+        padding: 9px;
+    }
+    .hud-card-head {
+        font-size: 6px;
+    }
+    .score-card .score-value,
+    .timer-card .timer-value {
+        font-size: 18px;
+    }
+    .phase-name {
+        font-size: 7px;
+    }
+    .powerup-note {
+        padding: 9px;
+    }
+    .pause-button {
+        min-height: 34px;
+    }
+    .arcade-topbar {
+        min-height: 32px;
+    }
+    .arcade-bottombar {
+        min-height: 30px;
+    }
+    .mobile-controls {
+        margin-top: 7px;
+        padding-inline: 4px;
+    }
+    .game-hint {
+        font-size: 7px;
+    }
+}
