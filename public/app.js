@@ -472,7 +472,7 @@ function spawnEnemy() {
             h: 30,
             phase: rand(0, 8),
             hp: type === "alien" ? 1 : 2,
-            fire: 2.5,
+            fire: 1.5,
         });
     } else if (game.phase === 2) {
         const r = Math.random();
@@ -530,10 +530,10 @@ function firePlayer() {
     if (!game.running || game.paused || game.ended) return;
     const p = game.player;
     if (game.upgrade) {
-        game.shots.push({ x: p.x - 13, y: p.y - 22, w: 5, h: 17, v: 510 });
-        game.shots.push({ x: p.x + 8, y: p.y - 22, w: 5, h: 17, v: 510 });
+        game.shots.push({ x: p.x - 13, y: p.y - 22, w: 5, h: 17, v: 500 });
+        game.shots.push({ x: p.x + 8, y: p.y - 22, w: 5, h: 17, v: 500 });
     } else game.shots.push({ x: p.x - 2, y: p.y - 25, w: 5, h: 18, v: 520 });
-    game.playerFireTimer = game.upgrade ? 0.2 : 0.23;
+    game.playerFireTimer = game.upgrade ? 0.7 : 0.35;
 }
 function fireEnemy(enemy, count = 1) {
     if (count === 1) {
@@ -807,11 +807,11 @@ function update(dt) {
     const length = Math.hypot(dx, dy) || 1;
     game.player.x = Math.max(
         28,
-        Math.min(W - 28, game.player.x + (dx / length) * 250 * dt),
+        Math.min(W - 28, game.player.x + (dx / length) * 230 * dt),
     );
     game.player.y = Math.max(
         H * 0.55,
-        Math.min(H - 38, game.player.y + (dy / length) * 250 * dt),
+        Math.min(H - 38, game.player.y + (dy / length) * 230 * dt),
     );
     if (game.touch.has("fire") && game.playerFireTimer <= 0) firePlayer();
     if (game.phase < 4) {
@@ -913,7 +913,6 @@ function update(dt) {
         }
         if (removed) continue;
         if (
-            e.type !== "alien" &&
             rectHit(
                 { x: game.player.x - 13, y: game.player.y - 14, w: 26, h: 25 },
                 { x: e.x - e.w / 2, y: e.y - e.h / 2, w: e.w, h: e.h },
